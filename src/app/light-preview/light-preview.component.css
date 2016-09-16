@@ -1,0 +1,17 @@
+.light-preview {
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+
+}
+
+.light-preview ._heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.light-preview ._unreachable {
+    font-size: .8em;
+    color: red;
+}

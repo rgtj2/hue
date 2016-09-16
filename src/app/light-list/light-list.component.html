@@ -1,0 +1,5 @@
+<a (click)="getLights()">Refresh</a>
+
+<div class="light-list">
+  <hue-light-preview *ngFor="let light of lights" [light]="light"></hue-light-preview>
+</div>

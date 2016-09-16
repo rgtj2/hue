@@ -1,6 +1,7 @@
 export interface ILightList {[id: number]: Light};
 
 export class Light {
+    bridgeIdx: number;
     state: LightState;
     type: string;
     name: string;
@@ -9,8 +10,9 @@ export class Light {
     uniqueid: string;
     swversion: string;
     
-    static fromResult(res: any): Light {
+    static fromResult(res: any, bridgeIdx: number): Light {
         let light = new Light();
+        light.bridgeIdx = bridgeIdx;
         light.state = LightState.fromResult(res.state);
         light.type = res.type;
         light.name = res.name;
@@ -28,6 +30,7 @@ export class LightState {
     hue: number;
     sat: number;
     effect: string;
+    reachable: boolean;
 
     static setBrigtnessPercentage(bri: number){
         return Math.floor(bri/254 * 100);
@@ -41,6 +44,7 @@ export class LightState {
         lightState.hue = res.hue;
         lightState.sat = res.sat;
         lightState.effect = res.effect;
+        lightState.reachable = res.reachable;
         return lightState;
     }
 }

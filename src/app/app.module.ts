@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HueLights } from './lights/index';
 import { HueService } from './shared/index';
+import { LightListComponent } from './light-list/light-list.component';
+import { LightPreviewComponent } from './light-preview/light-preview.component';
+import { LightToggleButtonComponent } from './light-toggle-button/light-toggle-button.component';
 
 @NgModule({
-  declarations: [AppComponent, HueLights],
+  declarations: [AppComponent, LightListComponent, LightPreviewComponent, LightToggleButtonComponent],
   imports: [
     BrowserModule,
     FormsModule,
