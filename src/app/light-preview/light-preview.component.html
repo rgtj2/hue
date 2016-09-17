@@ -4,11 +4,15 @@
 
     <hue-light-toggle-on *ngSwitchDefault [light]="light"><i class="fa fa-lightbulb-o"></i></hue-light-toggle-on>
 
-    <div class="_unreachable" *ngSwitchCase="false">!!</div>
+    <div class="_unreachable" *ngSwitchCase="false"><i class="fa fa-exclamation-triangle"></i></div>
 
   </div>
 
   <div class="_name">{{light.name}}</div>
 
-  <div class="_brightness">{{light.state.brightnessPercent}}%</div>
+  <div>
+    <hue-light-fader [light]="light" [turnUp]="true"><i class="fa fa-chevron-up"></i></hue-light-fader>
+    <div class="_brightness">{{light.state.brightnessPercent}}%</div>
+    <hue-light-fader [light]="light" [turnUp]="false"><i class="fa fa-chevron-down"></i></hue-light-fader>
+  </div>
 </div>    
