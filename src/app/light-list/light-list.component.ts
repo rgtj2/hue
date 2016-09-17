@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HueService }           from '../shared/index';
-import { Light, ILightList }    from "../shared/index";
+import { Light, LightHash }    from "../shared/index";
 
 @Component({
   selector: 'hue-light-list',
@@ -10,18 +10,16 @@ import { Light, ILightList }    from "../shared/index";
 })
 export class LightListComponent implements OnInit {
   lights: Light[];
-  loading: boolean;
-  constructor(private hueApi: HueService){}
+  constructor(private hueService: HueService){}
 
   ngOnInit(){
-    this.loading = true;
     this.getLights();
   }
 
   getLights(){
-    this.hueApi.getLights().then( ( lights: Light[] ) => {
-      this.lights = lights;
-      this.loading = false;
-    });
+    this.hueService.getLights()
+      .subscribe((r) => {
+        this.lights = LightHash.toLightList(r.json());
+      });
   }
 }

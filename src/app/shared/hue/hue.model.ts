@@ -1,4 +1,10 @@
-export interface ILightList {[id: number]: Light};
+export interface ILightHash {[id: number]: Light};
+
+export class LightHash {
+    static toLightList(lightHash: LightHash): Light[] {
+        return Object.keys(lightHash).map(id => Light.fromResult(lightHash[id], +id));
+    }
+}
 
 export class Light {
     bridgeIdx: number;

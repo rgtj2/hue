@@ -1,10 +1,14 @@
 <div class="light-preview" [ngStyle]="setLightStyle()">
-  <div class="_heading">
-    <div class="_name">{{light.name}}</div>
-    <div [ngSwitch]="light.state.reachable">
-      <div *ngSwitchDefault class="_brightness">{{light.state.brightnessPercent}}%</div>
-      <div class="_unreachable" *ngSwitchCase="false">!!</div>
-    </div>
+
+  <div [ngSwitch]="light.state.reachable">
+
+    <hue-light-toggle-button *ngSwitchDefault [light]="light"><i class="fa fa-lightbulb-o"></i></hue-light-toggle-button>
+
+    <div class="_unreachable" *ngSwitchCase="false">!!</div>
+
   </div>
-  <hue-light-toggle-button [light]="light"></hue-light-toggle-button>
-</div>
+
+  <div class="_name">{{light.name}}</div>
+
+  <div class="_brightness">{{light.state.brightnessPercent}}%</div>
+</div>    

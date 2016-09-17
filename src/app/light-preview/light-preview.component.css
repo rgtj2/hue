@@ -5,7 +5,7 @@
 
 }
 
-.light-preview ._heading {
+.light-preview {
     display: flex;
     flex-direction: row;
     justify-content: space-between;

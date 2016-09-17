@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Response } from '@angular/http';
-import { Light } from "../shared/hue.model";
+import { Light } from "../shared/index";
 
 @Component({
   selector: 'hue-light-preview',

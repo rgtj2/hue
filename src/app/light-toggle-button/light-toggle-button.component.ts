@@ -17,8 +17,9 @@ export class LightToggleButtonComponent implements OnInit {
   }
 
   toggleLight(){
-    this.hueService.setLightState(this.light.bridgeIdx, !this.light.state.on)
-      .then( (onValue: boolean) => this.light.state.on = onValue);
+    let newState = !this.light.state.on;
+    this.hueService.setLightState(this.light.bridgeIdx, {on: newState})
+      .subscribe( r => this.light.state.on = newState, () => this.light.state.on = !newState);
   }
 
 }

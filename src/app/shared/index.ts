@@ -1,2 +1,1 @@
-export * from './hue.service';
-export * from './hue.model';
+export * from './hue/index';
