@@ -2,7 +2,7 @@
 
   <div [ngSwitch]="light.state.reachable">
 
-    <hue-light-toggle-button *ngSwitchDefault [light]="light"><i class="fa fa-lightbulb-o"></i></hue-light-toggle-button>
+    <hue-light-toggle-on *ngSwitchDefault [light]="light"><i class="fa fa-lightbulb-o"></i></hue-light-toggle-on>
 
     <div class="_unreachable" *ngSwitchCase="false">!!</div>
 

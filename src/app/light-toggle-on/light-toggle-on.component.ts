@@ -3,12 +3,12 @@ import { Light, HueService } from "../shared/index";
 import { Response } from "@angular/http"
 
 @Component({
-  selector: 'hue-light-toggle-button',
+  selector: 'hue-light-toggle-on',
   providers: [HueService],
-  templateUrl: './light-toggle-button.component.html',
-  styleUrls: ['./light-toggle-button.component.css']
+  templateUrl: './light-toggle-on.component.html',
+  styleUrls: ['./light-toggle-on.component.css']
 })
-export class LightToggleButtonComponent implements OnInit {
+export class LightToggleOnComponent implements OnInit {
   @Input() light: Light
   @Input() onUpdate: (r: Response) => void;
   constructor(private hueService: HueService) { }

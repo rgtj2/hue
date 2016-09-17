@@ -1,9 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Response } from '@angular/http';
 import { Light } from "../shared/index";
+import { LightToggleOnComponent } from '../light-toggle-on/index';
 
 @Component({
   selector: 'hue-light-preview',
+  directives: [LightToggleOnComponent],
   templateUrl: './light-preview.component.html',
   styleUrls: ['./light-preview.component.css']
 })
